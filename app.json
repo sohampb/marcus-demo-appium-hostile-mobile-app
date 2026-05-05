@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Marcus Demo Appium-Hostile Mobile App",
+    "slug": "marcus-demo-appium-hostile-mobile-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#f6f5f2"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#f6f5f2"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.sohampb.marcusdemoappiumhostilemobileapp"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
