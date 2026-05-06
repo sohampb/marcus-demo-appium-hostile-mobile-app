@@ -43,12 +43,12 @@ const BENEFICIARIES = [
 
 function DemoField({ label, value, onChangeText, secureTextEntry = false, keyboardType = "default" }) {
   return (
-    <View style={styles.fieldBlock} accessible={false}>
-      <View style={styles.fieldLabelWrap} accessible={false}>
+    <View style={styles.fieldBlock}>
+      <View style={styles.fieldLabelWrap}>
         <Text style={styles.fieldLabel}>{label}</Text>
       </View>
-      <View style={styles.inputOuterShell} accessible={false}>
-        <View style={styles.inputShell} accessible={false}>
+      <View style={styles.inputOuterShell}>
+        <View style={styles.inputShell}>
           <TextInput
             value={value}
             onChangeText={onChangeText}
@@ -73,10 +73,9 @@ function SurfaceButton({ text, onPress, tone = "primary" }) {
   return (
     <Pressable
       onPress={onPress}
-      accessible={false}
       style={({ pressed }) => [style, pressed && styles.buttonPressed]}
     >
-      <View style={styles.buttonInnerShell} accessible={false}>
+      <View style={styles.buttonInnerShell}>
         <Text style={textStyle}>{text}</Text>
       </View>
     </Pressable>
@@ -134,11 +133,11 @@ export default function App() {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <SafeAreaView style={styles.safeArea}>
         <StatusBar style="dark" />
-        <View style={styles.outerFrame} accessible={false}>
-          <View style={styles.heroBand} accessible={false}>
+        <View style={styles.outerFrame}>
+          <View style={styles.heroBand}>
             <Text style={styles.heroEyebrow}>Feasibility Demo</Text>
             <Text style={styles.heroTitle}>Hostile Mobile Banking Journey</Text>
             <Text style={styles.heroText}>
@@ -154,7 +153,7 @@ export default function App() {
             showsVerticalScrollIndicator={false}
           >
             {screen === "login" ? (
-              <View style={styles.card} accessible={false}>
+              <View style={styles.card}>
                 <Text style={styles.sectionEyebrow}>Screen 1</Text>
                 <Text style={styles.sectionTitle}>Secure Login</Text>
                 <Text style={styles.sectionText}>
@@ -182,7 +181,7 @@ export default function App() {
                   tone={canLogin ? "primary" : "ghost"}
                 />
 
-                <View style={styles.credentialNote} accessible={false}>
+                <View style={styles.credentialNote}>
                   <Text style={styles.credentialTitle}>Demo credential</Text>
                   <Text style={styles.credentialText}>demouser / password</Text>
                 </View>
@@ -190,7 +189,7 @@ export default function App() {
             ) : null}
 
             {screen === "home" ? (
-              <View style={styles.card} accessible={false}>
+              <View style={styles.card}>
                 <Text style={styles.sectionEyebrow}>Screen 2</Text>
                 <Text style={styles.sectionTitle}>Banking Home</Text>
                 <Text style={styles.sectionText}>
@@ -198,8 +197,8 @@ export default function App() {
                   includes navigation and decision-making.
                 </Text>
 
-                <View style={styles.balancePanel} accessible={false}>
-                  <View accessible={false}>
+                <View style={styles.balancePanel}>
+                  <View>
                     <Text style={styles.balanceLabel}>Available balance</Text>
                     <Text style={styles.balanceAmount}>$12,480.25</Text>
                   </View>
@@ -214,14 +213,13 @@ export default function App() {
                       <Pressable
                         key={action.title}
                         onPress={() => setSelectedAction(action.title)}
-                        accessible={false}
                         style={({ pressed }) => [
                           styles.actionCard,
                           isSelected && styles.actionCardSelected,
                           pressed && styles.buttonPressed
                         ]}
                       >
-                        <View style={styles.actionCardInner} accessible={false}>
+                        <View style={styles.actionCardInner}>
                           <Text style={styles.actionTitle}>{action.title}</Text>
                           <Text style={styles.actionText}>{action.text}</Text>
                         </View>
@@ -235,7 +233,7 @@ export default function App() {
             ) : null}
 
             {screen === "transfer" ? (
-              <View style={styles.card} accessible={false}>
+              <View style={styles.card}>
                 <Text style={styles.sectionEyebrow}>Screen 3</Text>
                 <Text style={styles.sectionTitle}>Transfer Funds</Text>
                 <Text style={styles.sectionText}>
@@ -243,22 +241,21 @@ export default function App() {
                   automation-specific identifiers.
                 </Text>
 
-                <View style={styles.summaryCard} accessible={false}>
+                <View style={styles.summaryCard}>
                   <Text style={styles.summaryTitle}>Transfer from</Text>
                   <Text style={styles.summaryText}>Demo Checking ending 8821</Text>
                 </View>
 
-                <View style={styles.fieldLabelWrap} accessible={false}>
+                <View style={styles.fieldLabelWrap}>
                   <Text style={styles.fieldLabel}>Transfer to</Text>
                 </View>
-                <View style={styles.choiceWrap} accessible={false}>
+                <View style={styles.choiceWrap}>
                   {BENEFICIARIES.map((name) => {
                     const active = transfer.beneficiary === name;
 
                     return (
                       <Pressable
                         key={name}
-                        accessible={false}
                         onPress={() =>
                           setTransfer((current) => ({
                             ...current,
@@ -271,7 +268,7 @@ export default function App() {
                           pressed && styles.buttonPressed
                         ]}
                       >
-                        <View style={styles.choiceChipInner} accessible={false}>
+                        <View style={styles.choiceChipInner}>
                           <Text style={active ? styles.choiceChipTextActive : styles.choiceChipText}>
                             {name}
                           </Text>
